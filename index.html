@@ -7,26 +7,30 @@
 </head>
 <body>
 
-<section id="firstSection">
+<section>
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="asserts/img/pos-logo.png" alt="" width="50" height="44">
             </a>
-            <a class="navbar-brand text-white " href="#">Dashoard</a>
+            <!--<a id="dashboard" class="navbar-brand text-white " href="#">Dashoard</a>-->
+            <label  id="dashboard" class="col-sm-2 col-form-label col-form-label-lg text-white">Dashboard</label>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="">Manage Customer</a>
+                        <!-- <a id="manageCustomer" class="nav-link text-white" href="">Manage Customer</a>-->
+                        <label id="manageCustomer" class="col-sm-2 col-form-label col-form-label-lg text-white">Manage Customer</label>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="">Manage Item</a>
+                        <!--<a id="manageItem" class="nav-link text-white" href="">Manage Item</a>-->
+                        <label id="manageItem" class="col-sm-2 col-form-label col-form-label-lg text-white">Manage Item</label>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="">Place Order</a>
+                        <!--<a id="placeOrder" class="nav-link text-white" href="">Place Order</a>-->
+                        <label id="placeOrder" class="col-sm-2 col-form-label col-form-label-lg text-white">Place Order</label>
                     </li>
                 </ul>
                 <form class="d-flex">
@@ -36,6 +40,11 @@
             </div>
         </div>
     </nav>
+
+</section>
+
+<section id="firstSection">
+
 
     <div class="container-fluid">
         <div class="row">
@@ -532,8 +541,55 @@
 </section>
 
 <script src="asserts/js/bootstrap.js"></script>
-<!--<script>
 
-</script>-->
+<script>
+    var firstSection = document.getElementById('firstSection');
+    var secondSection = document.getElementById('secondSection');
+    var thridSection = document.getElementById('thirdSection');
+    var fourthSection = document.getElementById('fourthSection');
+
+    secondSection.style.display = "none";
+    thridSection.style.display = "none";
+    fourthSection.style.display = "none";
+
+
+    var dashboard = document.getElementById('dashboard');
+    var manageCustomer = document.getElementById('manageCustomer');
+    var manageItem = document.getElementById('manageItem');
+    var placeOrder = document.getElementById('placeOrder');
+
+    manageCustomer.addEventListener('click', function () {
+        firstSection.style.display = "none";
+        thridSection.style.display = "none";
+        fourthSection.style.display = "none";
+        secondSection.style.display = "block"
+    });
+
+    dashboard.addEventListener('click', function () {
+        secondSection.style.display = "none";
+        thridSection.style.display = "none";
+        fourthSection.style.display = "none";
+
+        firstSection.style.display = "block";
+    });
+
+    manageItem.addEventListener('click', function () {
+        secondSection.style.display = "none";
+        fourthSection.style.display = "none";
+        firstSection.style.display = "none";
+
+        thridSection.style.display = "block";
+    })
+
+    placeOrder.addEventListener('click', function () {
+        secondSection.style.display = "none";
+        firstSection.style.display = "none";
+        thridSection.style.display = "none";
+
+        fourthSection.style.display = "block";
+    })
+
+</script>
+
 </body>
 </html>
